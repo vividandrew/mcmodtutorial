@@ -7,6 +7,7 @@ import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import werdna.tutorial.items.ModItems;
+import werdna.tutorial.items.ModItemsGroup;
 
 public class Tutorial implements ModInitializer {
 	public static final String MOD_ID = "tutorial";
@@ -24,6 +25,7 @@ public class Tutorial implements ModInitializer {
 
 		//LOGGER.info("Hello Fabric world!");
 		ModItems.registerItems();
+		ModItemsGroup.registerCreativeModeTab();
 	}
 
 	public static Identifier id(String path) {

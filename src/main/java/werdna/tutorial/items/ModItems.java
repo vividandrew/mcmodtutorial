@@ -26,9 +26,10 @@ public class ModItems {
     {
         Tutorial.LOGGER.info("Register Modded items for " + Tutorial.MOD_ID);
 
+        /*
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
             output.accept(FLOURITE);
             output.accept(RAW_FLOURITE);
-        });
+        });*/
     }
 }
