@@ -9,6 +9,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import werdna.tutorial.Tutorial;
+import werdna.tutorial.blocks.ModBlocks;
 
 public class ModItemsGroup {
     public static final CreativeModeTab MY_MODS = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(Tutorial.MOD_ID, "andys_mods"), FabricCreativeModeTab.builder()
@@ -16,8 +17,19 @@ public class ModItemsGroup {
                     .icon(() -> new ItemStack(ModItems.RAW_FLOURITE))
                     .displayItems(((parameters, output) ->
                     {
+                        //items
                         output.accept(ModItems.RAW_FLOURITE);
                         output.accept(ModItems.FLOURITE);
+                        output.accept(ModItems.BISMUTH);
+                        output.accept(ModItems.RAW_BISMUTH);
+
+                        //blocks
+                        output.accept(ModBlocks.BISMUTH);
+                        output.accept(ModBlocks.BISMUTH_DEEPSLATE_ORE);
+                        output.accept(ModBlocks.BISMUTH_END_ORE);
+                        output.accept(ModBlocks.BISMUTH_NETHER_ORE);
+                        output.accept(ModBlocks.BISMUTH_ORE);
+                        output.accept(ModBlocks.RAW_BISMUTH);
                     }))
             .build());
 

@@ -15,6 +15,8 @@ import java.util.function.Function;
 public class ModItems {
     public static final Item FLOURITE = registerItem("flourite", Item::new);
     public static final Item RAW_FLOURITE = registerItem("raw_flourite", Item::new);
+    public static final Item BISMUTH = registerItem("bismuth", Item::new);
+    public static final Item RAW_BISMUTH = registerItem("raw_bismuth", Item::new);
 
     public static Item registerItem(String name, Function<Item.Properties, Item> function )
     {
@@ -26,7 +28,7 @@ public class ModItems {
     {
         Tutorial.LOGGER.info("Register Modded items for " + Tutorial.MOD_ID);
 
-        /*
+        /* add to existing tabs
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
             output.accept(FLOURITE);
             output.accept(RAW_FLOURITE);

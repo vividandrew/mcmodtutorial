@@ -1,5 +1,13 @@
 {
+  "tutorial.creativemodetab.everything": "Andy's Mod",
   "item.tutorial.flourite": "Flourite",
   "item.tutorial.raw_flourite": "Raw Flourite",
-  "tutorial.creativemodetab.everything": "Andy's Mod"
+  "item.tutorial.bismuth": "Bismuth",
+  "item.tutorial.raw_bismuth": "Raw Bismuth",
+  "block.tutorial.bismuth_block": "Bismuth Block",
+  "block.tutorial.bismuth_deepslate_ore": "Bismuth Deepslate Ore",
+  "block.tutorial.bismuth_end_ore": "Bismuth Enderite ore",
+  "block.tutorial.bismuth_nether_ore": "Bismuth Netherite Ore",
+  "block.tutorial.bismuth_ore": "Bismuth Ore Block",
+  "block.tutorial.raw_bismuth_block": "Raw Bismuth Block"
 }

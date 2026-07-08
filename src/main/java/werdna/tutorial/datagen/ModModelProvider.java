@@ -6,6 +6,7 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import werdna.tutorial.blocks.ModBlocks;
 import werdna.tutorial.items.ModItems;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -15,12 +16,19 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
-
+        blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH);
+        blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_DEEPSLATE_ORE);
+        blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_END_ORE);
+        blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_NETHER_ORE);
+        blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_ORE);
+        blockModelGenerators.createTrivialCube(ModBlocks.RAW_BISMUTH);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.generateFlatItem(ModItems.FLOURITE, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.RAW_FLOURITE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.BISMUTH, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.RAW_BISMUTH, ModelTemplates.FLAT_ITEM);
     }
 }

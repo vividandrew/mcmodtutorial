@@ -6,6 +6,7 @@ import net.minecraft.resources.Identifier;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import werdna.tutorial.blocks.ModBlocks;
 import werdna.tutorial.items.ModItems;
 import werdna.tutorial.items.ModItemsGroup;
 
@@ -25,6 +26,7 @@ public class Tutorial implements ModInitializer {
 
 		//LOGGER.info("Hello Fabric world!");
 		ModItems.registerItems();
+		ModBlocks.registerBlocks();
 		ModItemsGroup.registerCreativeModeTab();
 	}
 
