@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import werdna.tutorial.blocks.ModBlocks;
 import werdna.tutorial.items.ModItems;
 import werdna.tutorial.items.ModItemsGroup;
+import werdna.tutorial.registries.ModFuel;
 
 public class Tutorial implements ModInitializer {
 	public static final String MOD_ID = "tutorial";
@@ -28,6 +29,7 @@ public class Tutorial implements ModInitializer {
 		ModItems.registerItems();
 		ModBlocks.registerBlocks();
 		ModItemsGroup.registerCreativeModeTab();
+		ModFuel.registerModFuels();
 	}
 
 	public static Identifier id(String path) {

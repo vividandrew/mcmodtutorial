@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import werdna.tutorial.Tutorial;
+import werdna.tutorial.blocks.custom.MagicBlock;
 
 import java.util.function.Function;
 
@@ -35,6 +36,8 @@ public class ModBlocks {
     public static Block RAW_BISMUTH = registerBlock("raw_bismuth_block", properties -> new Block(
             properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)
     ));
+
+    public static Block MAGIC_BLOCK = registerBlock("magic_block", MagicBlock::new);
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function)
     {

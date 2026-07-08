@@ -22,6 +22,10 @@ public class ModItemsGroup {
                         output.accept(ModItems.FLOURITE);
                         output.accept(ModItems.BISMUTH);
                         output.accept(ModItems.RAW_BISMUTH);
+                        output.accept(ModItems.STARLIGHT_ASHES);
+
+                        //food items
+                        output.accept(ModItems.CAULIFLOWER);
 
                         //blocks
                         output.accept(ModBlocks.BISMUTH);
@@ -30,6 +34,10 @@ public class ModItemsGroup {
                         output.accept(ModBlocks.BISMUTH_NETHER_ORE);
                         output.accept(ModBlocks.BISMUTH_ORE);
                         output.accept(ModBlocks.RAW_BISMUTH);
+
+                        //Custom items
+                        output.accept(ModItems.CHISEL);
+                        output.accept(ModBlocks.MAGIC_BLOCK);
                     }))
             .build());
 

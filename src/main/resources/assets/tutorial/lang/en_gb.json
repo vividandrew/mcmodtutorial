@@ -4,10 +4,14 @@
   "item.tutorial.raw_flourite": "Raw Flourite",
   "item.tutorial.bismuth": "Bismuth",
   "item.tutorial.raw_bismuth": "Raw Bismuth",
+  "item.tutorial.chisel": "Chisel",
+  "item.tutorial.cauliflower": "Cauliflower",
+  "item.tutorial.starlight_ashes": "Starlight Ash",
   "block.tutorial.bismuth_block": "Bismuth Block",
   "block.tutorial.bismuth_deepslate_ore": "Bismuth Deepslate Ore",
   "block.tutorial.bismuth_end_ore": "Bismuth Enderite ore",
   "block.tutorial.bismuth_nether_ore": "Bismuth Netherite Ore",
   "block.tutorial.bismuth_ore": "Bismuth Ore Block",
-  "block.tutorial.raw_bismuth_block": "Raw Bismuth Block"
+  "block.tutorial.raw_bismuth_block": "Raw Bismuth Block",
+  "block.tutorial.magic_block": "Magic block"
 }

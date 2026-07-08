@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "tutorial:bismuth",
+    "s": "minecraft:stick"
+  },
+  "pattern": [
+    " B",
+    "s "
+  ],
+  "result": {
+    "id": "tutorial:chisel"
+  }
+}

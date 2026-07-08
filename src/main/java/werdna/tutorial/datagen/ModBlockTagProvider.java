@@ -24,6 +24,13 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks.BISMUTH_ORE.properties().blockIdOrThrow())
                 .add(ModBlocks.RAW_BISMUTH.properties().blockIdOrThrow());
 
+        tag(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.BISMUTH.properties().blockIdOrThrow())
+                .add(ModBlocks.BISMUTH_END_ORE.properties().blockIdOrThrow())
+                .add(ModBlocks.BISMUTH_NETHER_ORE.properties().blockIdOrThrow())
+                .add(ModBlocks.BISMUTH_ORE.properties().blockIdOrThrow())
+                .add(ModBlocks.RAW_BISMUTH.properties().blockIdOrThrow());
+
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.BISMUTH_DEEPSLATE_ORE.properties().blockIdOrThrow());
     }

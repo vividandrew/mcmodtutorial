@@ -29,6 +29,7 @@ public class ModBlockLoottableProvider extends FabricBlockLootSubProvider {
     public void generate() {
         dropSelf(ModBlocks.BISMUTH);
         dropSelf(ModBlocks.RAW_BISMUTH);
+        dropSelf(ModBlocks.MAGIC_BLOCK);
 
         add(ModBlocks.BISMUTH_ORE, createOreDropper(ModBlocks.BISMUTH_ORE, ModItems.RAW_BISMUTH, 1f ,2f));
         add(ModBlocks.BISMUTH_NETHER_ORE, createOreDropper(ModBlocks.BISMUTH_NETHER_ORE, ModItems.RAW_BISMUTH, 1f,1f));

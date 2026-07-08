@@ -22,13 +22,22 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_NETHER_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.RAW_BISMUTH);
+        blockModelGenerators.createTrivialCube(ModBlocks.MAGIC_BLOCK);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
+        //Items
         itemModelGenerators.generateFlatItem(ModItems.FLOURITE, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.RAW_FLOURITE, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.RAW_BISMUTH, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.STARLIGHT_ASHES, ModelTemplates.FLAT_ITEM);
+
+        //food
+        itemModelGenerators.generateFlatItem(ModItems.CAULIFLOWER, ModelTemplates.FLAT_ITEM);
+
+        //tools
+        itemModelGenerators.generateFlatItem(ModItems.CHISEL, ModelTemplates.FLAT_ITEM);
     }
 }
