@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import werdna.tutorial.items.ModItems;
+import werdna.tutorial.tag.ModTags;
 
 public class MagicBlock extends Block {
     public MagicBlock(Properties properties) {
@@ -37,7 +38,7 @@ public class MagicBlock extends Block {
         return InteractionResult.SUCCESS;
     }
     private boolean isValiditem(ItemStack item)
-    {
+    {/*
         if(item.is(Items.GOLD_INGOT))
         {
             return true;
@@ -45,8 +46,8 @@ public class MagicBlock extends Block {
         if(item.is(ModItems.BISMUTH))
         {
             return true;
-        }
-        return false;
+        }*/
+        return item.is(ModTags.Items.TRANSFORMABLE_ITEMS);
     }
 
     @Override

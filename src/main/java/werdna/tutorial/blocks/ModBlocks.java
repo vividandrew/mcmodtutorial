@@ -1,5 +1,6 @@
 package werdna.tutorial.blocks;
 
+import net.jpountz.lz4.LZ4FrameOutputStream;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -8,10 +9,9 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import werdna.tutorial.Tutorial;
 import werdna.tutorial.blocks.custom.MagicBlock;
 
@@ -21,6 +21,31 @@ public class ModBlocks {
 
     public static Block BISMUTH = registerBlock("bismuth_block", properties -> new Block(properties.strength(4f)
             .requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+
+    public static Block BISMUTH_STAIRS = registerBlock("bismuth_stairs", properties -> new StairBlock(
+            ModBlocks.BISMUTH.defaultBlockState(),
+            properties.strength(2f).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()
+    ));
+    public static Block BISMUTH_SLAB = registerBlock("bismuth_slab", properties -> new SlabBlock(
+            properties.strength(2f).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()
+    ));
+    public static Block BISMUTH_BUTTON = registerBlock("bismuth_button", properties -> new ButtonBlock(BlockSetType.IRON,200,
+            properties.strength(2f)
+                    .requiresCorrectToolForDrops().sound(SoundType.AMETHYST)
+    ));
+    public static Block BISMUTH_PRESSURE_PLATE = registerBlock("bismuth_pressure_plate", properties -> new PressurePlateBlock(BlockSetType.IRON,
+            properties.strength(2f)
+                    .requiresCorrectToolForDrops().sound(SoundType.AMETHYST)
+    ));
+    public static Block BISMUTH_WALL = registerBlock("bismuth_wall", properties -> new WallBlock(
+            properties.strength(2f)
+                    .requiresCorrectToolForDrops().sound(SoundType.AMETHYST)
+    ));
+
+    public static Block BISMUTH_DOOR = registerBlock("bismuth_door", properties -> new DoorBlock(BlockSetType.ACACIA,
+            properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)
+    ));
+
     public static Block BISMUTH_DEEPSLATE_ORE = registerBlock("bismuth_deepslate_ore", properties -> new DropExperienceBlock(UniformInt.of(3,5),
             properties.strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)
     ));
@@ -43,7 +68,6 @@ public class ModBlocks {
     {
         Block toRegister = function.apply(BlockBehaviour.Properties.of()
                 .setId(ResourceKey.create(Registries.BLOCK,Identifier.fromNamespaceAndPath(Tutorial.MOD_ID, name))));
-
         registerBlockItem(name, toRegister);
         return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(Tutorial.MOD_ID, name), toRegister);
     }

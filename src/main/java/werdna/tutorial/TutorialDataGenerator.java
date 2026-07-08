@@ -3,10 +3,8 @@ package werdna.tutorial;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.client.data.models.ModelProvider;
-import werdna.tutorial.datagen.ModBlockLoottableProvider;
-import werdna.tutorial.datagen.ModBlockTagProvider;
-import werdna.tutorial.datagen.ModModelProvider;
-import werdna.tutorial.datagen.ModRecipeProvider;
+import werdna.tutorial.datagen.*;
+import werdna.tutorial.tag.ModTags;
 
 public class TutorialDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -17,5 +15,6 @@ public class TutorialDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModBlockLoottableProvider::new);
 		pack.addProvider(ModBlockTagProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
+		pack.addProvider(ModItemTagProvider::new);
 	}
 }

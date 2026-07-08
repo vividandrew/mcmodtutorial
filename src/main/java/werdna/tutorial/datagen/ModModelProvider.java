@@ -6,6 +6,7 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.data.BlockFamily;
 import werdna.tutorial.blocks.ModBlocks;
 import werdna.tutorial.items.ModItems;
 
@@ -16,7 +17,16 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
-        blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH);
+        var bismuth = blockModelGenerators.family(ModBlocks.BISMUTH);
+
+        bismuth.stairs(ModBlocks.BISMUTH_STAIRS);
+        bismuth.slab(ModBlocks.BISMUTH_SLAB);
+        bismuth.pressurePlate(ModBlocks.BISMUTH_PRESSURE_PLATE);
+        bismuth.button(ModBlocks.BISMUTH_BUTTON);
+        bismuth.wall(ModBlocks.BISMUTH_WALL);
+
+        blockModelGenerators.createDoor(ModBlocks.BISMUTH_DOOR);
+
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_DEEPSLATE_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_END_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_NETHER_ORE);

@@ -5,6 +5,12 @@
     "tutorial:bismuth_end_ore",
     "tutorial:bismuth_nether_ore",
     "tutorial:bismuth_ore",
-    "tutorial:raw_bismuth_block"
+    "tutorial:raw_bismuth_block",
+    "tutorial:bismuth_stairs",
+    "tutorial:bismuth_slab",
+    "tutorial:bismuth_button",
+    "tutorial:bismuth_pressure_plate",
+    "tutorial:bismuth_wall",
+    "tutorial:bismuth_door"
   ]
 }

@@ -1,18 +1,20 @@
 package werdna.tutorial.items;
 
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.TooltipDisplay;
 import werdna.tutorial.Tutorial;
 import werdna.tutorial.items.custom.Chisel;
 
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class ModItems {
@@ -27,7 +29,18 @@ public class ModItems {
     ));
     public static final Item CAULIFLOWER = registerItem("cauliflower", properties -> new Item(
             properties.food(new FoodProperties.Builder().nutrition(5).saturationModifier(.6f).build())
-    ));
+    ){
+        @Override
+        public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
+            if(Minecraft.getInstance().hasShiftDown())
+            {
+                builder.accept(Component.translatable("tooltip.tutorial.cauliflower.shift.down"));
+            }else{
+                builder.accept(Component.translatable("tooltip.tutorial.cauliflower.shift.up"));
+            }
+            super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
+        }
+    });
 
     public static Item registerItem(String name, Function<Item.Properties, Item> function )
     {

@@ -34,6 +34,12 @@ public class ModItemsGroup {
                         output.accept(ModBlocks.BISMUTH_NETHER_ORE);
                         output.accept(ModBlocks.BISMUTH_ORE);
                         output.accept(ModBlocks.RAW_BISMUTH);
+                        output.accept(ModBlocks.BISMUTH_STAIRS);
+                        output.accept(ModBlocks.BISMUTH_SLAB);
+                        output.accept(ModBlocks.BISMUTH_BUTTON);
+                        output.accept(ModBlocks.BISMUTH_PRESSURE_PLATE);
+                        output.accept(ModBlocks.BISMUTH_WALL);
+                        output.accept(ModBlocks.BISMUTH_DOOR);
 
                         //Custom items
                         output.accept(ModItems.CHISEL);

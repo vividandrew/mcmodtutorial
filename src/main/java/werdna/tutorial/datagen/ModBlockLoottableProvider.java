@@ -30,6 +30,13 @@ public class ModBlockLoottableProvider extends FabricBlockLootSubProvider {
         dropSelf(ModBlocks.BISMUTH);
         dropSelf(ModBlocks.RAW_BISMUTH);
         dropSelf(ModBlocks.MAGIC_BLOCK);
+        dropSelf(ModBlocks.BISMUTH_STAIRS);
+        dropSelf(ModBlocks.BISMUTH_BUTTON);
+        dropSelf(ModBlocks.BISMUTH_PRESSURE_PLATE);
+        dropSelf(ModBlocks.BISMUTH_WALL);
+
+        add(ModBlocks.BISMUTH_SLAB,createSlabItemTable(ModBlocks.BISMUTH_SLAB));
+        add(ModBlocks.BISMUTH_DOOR,createDoorTable(ModBlocks.BISMUTH_DOOR));
 
         add(ModBlocks.BISMUTH_ORE, createOreDropper(ModBlocks.BISMUTH_ORE, ModItems.RAW_BISMUTH, 1f ,2f));
         add(ModBlocks.BISMUTH_NETHER_ORE, createOreDropper(ModBlocks.BISMUTH_NETHER_ORE, ModItems.RAW_BISMUTH, 1f,1f));

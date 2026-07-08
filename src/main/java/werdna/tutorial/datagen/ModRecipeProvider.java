@@ -8,8 +8,10 @@ import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CookingBookCategory;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.ItemLike;
+import werdna.tutorial.Tutorial;
 import werdna.tutorial.blocks.ModBlocks;
 import werdna.tutorial.items.ModItems;
 
@@ -36,6 +38,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 nineBlockStorageRecipes(RecipeCategory.BUILDING_BLOCKS, ModItems.BISMUTH, RecipeCategory.DECORATIONS,
                         ModBlocks.BISMUTH);
+
+                stairBuilder(ModBlocks.BISMUTH_STAIRS, Ingredient.of(ModBlocks.BISMUTH))
+                        .unlockedBy(getHasName(ModBlocks.BISMUTH), has(ModBlocks.BISMUTH))
+                        .save(output);
+
+                slab(RecipeCategory.BUILDING_BLOCKS,ModBlocks.BISMUTH_SLAB,ModBlocks.BISMUTH);
+
+                pressurePlate(ModBlocks.BISMUTH_PRESSURE_PLATE, ModBlocks.BISMUTH);
+                buttonBuilder(ModBlocks.BISMUTH_BUTTON,Ingredient.of(ModBlocks.BISMUTH))
+                        .unlockedBy(getHasName(ModBlocks.BISMUTH), has(ModBlocks.BISMUTH))
+                        .save(output);
+
+                wallBuilder(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BISMUTH_WALL, Ingredient.of(ModBlocks.BISMUTH))
+                        .unlockedBy(getHasName(ModBlocks.BISMUTH), has(ModBlocks.BISMUTH))
+                        .save(output);
+
+                doorBuilder(ModBlocks.BISMUTH_DOOR, Ingredient.of(ModBlocks.BISMUTH));
+
 
                 shaped(RecipeCategory.MISC, ModBlocks.RAW_BISMUTH)
                         .pattern("RRR")
