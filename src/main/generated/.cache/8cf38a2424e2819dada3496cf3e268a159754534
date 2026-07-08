@@ -1,0 +1,7 @@
+// 26.2	-999999999-01-01T00:00:00	Tutorial/Block Loot Tables
+92b3fe896a357ef5181827ec5d899edb2436ea57 data/tutorial/loot_table/blocks/bismuth_block.json
+ad4f9d3b6bd12032646db45e4b5b6c7d5257d1d3 data/tutorial/loot_table/blocks/bismuth_deepslate_ore.json
+3dc9989bb8c0563c78a1d208aae0aa30b296a6ef data/tutorial/loot_table/blocks/bismuth_end_ore.json
+61d67b60f357553f90dc081852b46468c250e599 data/tutorial/loot_table/blocks/bismuth_nether_ore.json
+100761c4e3ebdfd585197b0acd30cdbac4c0dc85 data/tutorial/loot_table/blocks/bismuth_ore.json
+64b06c4f8ae900b377174fedd09ea96fb8d3e65e data/tutorial/loot_table/blocks/raw_bismuth_block.json

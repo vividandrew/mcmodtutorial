@@ -1,0 +1,3 @@
+// 26.2	-999999999-01-01T00:00:00	Tutorial/Tags for minecraft:block
+b81b514b42aca02ef44fbb71f9122451f1621892 data/minecraft/tags/block/mineable/pickaxe.json
+edd509bc569a71e45b91935d0e20f5c1ce585390 data/minecraft/tags/block/needs_iron_tool.json
