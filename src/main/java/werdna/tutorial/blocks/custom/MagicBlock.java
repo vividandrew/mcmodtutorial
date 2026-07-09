@@ -24,7 +24,7 @@ import werdna.tutorial.tag.ModTags;
 
 public class MagicBlock extends Block {
     public MagicBlock(Properties properties) {
-        super(properties.sound(SoundType.AMETHYST).strength(2f));
+        super(properties);
     }
 
     @Override

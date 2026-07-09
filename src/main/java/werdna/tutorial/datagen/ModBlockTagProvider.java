@@ -4,8 +4,10 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import werdna.tutorial.blocks.ModBlocks;
 import werdna.tutorial.items.ModItems;
+import werdna.tutorial.tag.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -28,7 +30,8 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks.BISMUTH_BUTTON.properties().blockIdOrThrow())
                 .add(ModBlocks.BISMUTH_PRESSURE_PLATE.properties().blockIdOrThrow())
                 .add(ModBlocks.BISMUTH_WALL.properties().blockIdOrThrow())
-                .add(ModBlocks.BISMUTH_DOOR.properties().blockIdOrThrow());
+                .add(ModBlocks.BISMUTH_DOOR.properties().blockIdOrThrow())
+                .add(ModBlocks.MAGIC_BLOCK.properties().blockIdOrThrow());
 
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.BISMUTH.properties().blockIdOrThrow())
@@ -48,5 +51,17 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 
         tag(BlockTags.WALLS)
                 .add(ModBlocks.BISMUTH_WALL.properties().blockIdOrThrow());
+
+        tag(ModTags.Blocks.NEEDS_BISMUTH_TOOL)
+                .add(ModBlocks.MAGIC_BLOCK.properties().blockIdOrThrow())
+                .addTag(BlockTags.NEEDS_IRON_TOOL);
+
+        tag(ModTags.Blocks.INCORRENT_FOR_BISMUTH_TOOL)
+                .addOptionalTag(BlockTags.INCORRECT_FOR_IRON_TOOL);
+
+        tag(ModTags.Blocks.PAXEL_MINABLE)
+                .forceAddTag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .forceAddTag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .forceAddTag(BlockTags.MINEABLE_WITH_AXE);
     }
 }

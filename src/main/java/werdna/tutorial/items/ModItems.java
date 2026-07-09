@@ -13,6 +13,9 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.TooltipDisplay;
 import werdna.tutorial.Tutorial;
 import werdna.tutorial.items.custom.Chisel;
+import werdna.tutorial.items.custom.Hammer;
+import werdna.tutorial.items.custom.Paxel;
+import werdna.tutorial.material.ModToolMaterial;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -24,9 +27,23 @@ public class ModItems {
     public static final Item RAW_BISMUTH = registerItem("raw_bismuth", Item::new);
     public static final Item STARLIGHT_ASHES = registerItem("starlight_ashes", Item::new);
 
+    //Tools
+    public static final Item BISMUTH_SWORD = registerItem("bismuth_sword", properties -> new Item(properties.sword(ModToolMaterial.BISMUTH,3f, -2.3f)));
+    public static final Item BISMUTH_PICKAXE = registerItem("bismuth_pickaxe", properties -> new Item(properties.pickaxe(ModToolMaterial.BISMUTH,1f,-2.8f)));
+    public static final Item BISMUTH_SHOVEL = registerItem("bismuth_shovel",properties -> new ShovelItem(ModToolMaterial.BISMUTH,1.5f, -3.0f, properties));
+    public static final Item BISMUTH_HOE = registerItem("bismuth_hoe", properties -> new HoeItem(ModToolMaterial.BISMUTH, -2f, -1f, properties));
+    public static final Item BISMUTH_AXE = registerItem("bismuth_axe", properties -> new AxeItem(ModToolMaterial.BISMUTH, 6f, -3.1f, properties));
+    public static final Item BISMUTH_PAXEL = registerItem("bismuth_paxel", properties -> new Paxel(
+            ModToolMaterial.BISMUTH, 6f, -3.1f, properties
+    ));
+    public static final Item BISMUTH_HAMMER = registerItem("bismuth_hammer",properties -> new Hammer(
+            properties.pickaxe(ModToolMaterial.BISMUTH,1f,-2.8f)
+    ));
     public static final Item CHISEL = registerItem("chisel", properties -> new Chisel(
             properties.durability(32)
     ));
+
+    //Food
     public static final Item CAULIFLOWER = registerItem("cauliflower", properties -> new Item(
             properties.food(new FoodProperties.Builder().nutrition(5).saturationModifier(.6f).build())
     ){

@@ -10,6 +10,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import werdna.tutorial.Tutorial;
 import werdna.tutorial.blocks.ModBlocks;
+import werdna.tutorial.datagen.ModItemTagProvider;
 
 public class ModItemsGroup {
     public static final CreativeModeTab MY_MODS = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, Identifier.fromNamespaceAndPath(Tutorial.MOD_ID, "andys_mods"), FabricCreativeModeTab.builder()
@@ -40,6 +41,15 @@ public class ModItemsGroup {
                         output.accept(ModBlocks.BISMUTH_PRESSURE_PLATE);
                         output.accept(ModBlocks.BISMUTH_WALL);
                         output.accept(ModBlocks.BISMUTH_DOOR);
+
+                        //Tools
+                        output.accept(ModItems.BISMUTH_SWORD);
+                        output.accept(ModItems.BISMUTH_PICKAXE);
+                        output.accept(ModItems.BISMUTH_AXE);
+                        output.accept(ModItems.BISMUTH_SHOVEL);
+                        output.accept(ModItems.BISMUTH_HOE);
+                        output.accept(ModItems.BISMUTH_PAXEL);
+                        output.accept(ModItems.BISMUTH_HAMMER);
 
                         //Custom items
                         output.accept(ModItems.CHISEL);

@@ -1,5 +1,8 @@
 // 26.2	-999999999-01-01T00:00:00	Tutorial/Tags for minecraft:block
-ed2cf944d947892f46cc82109705ccc2b5d2fbaa data/minecraft/tags/block/mineable/pickaxe.json
+cfde3185dfa6e6a0e09ea3be0b7dacfcb2b9724c data/minecraft/tags/block/incorrect_for_bismuth_tool.json
+e186768fca3ce16ac17dc246d29631220dec199a data/minecraft/tags/block/mineable/pickaxe.json
 edd509bc569a71e45b91935d0e20f5c1ce585390 data/minecraft/tags/block/needs_iron_tool.json
 36e58f0b458040f7a530569230ca2b3db969425b data/minecraft/tags/block/needs_stone_tool.json
 6f82c6d823a8a8001f54b55e9d9f988614482fce data/minecraft/tags/block/walls.json
+c2fc1779456882d4eba9ee42bd7f5832b1ead6eb data/tutorial/tags/block/needs_bismuth_tool.json
+3b3a82a3d90eaa682bbc18ebfadee64e027a290f data/tutorial/tags/block/paxel_minable.json

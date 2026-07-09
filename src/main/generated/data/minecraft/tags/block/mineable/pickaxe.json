@@ -11,6 +11,7 @@
     "tutorial:bismuth_button",
     "tutorial:bismuth_pressure_plate",
     "tutorial:bismuth_wall",
-    "tutorial:bismuth_door"
+    "tutorial:bismuth_door",
+    "tutorial:magic_block"
   ]
 }

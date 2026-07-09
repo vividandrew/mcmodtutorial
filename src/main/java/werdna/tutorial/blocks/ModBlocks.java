@@ -62,7 +62,9 @@ public class ModBlocks {
             properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)
     ));
 
-    public static Block MAGIC_BLOCK = registerBlock("magic_block", MagicBlock::new);
+    public static Block MAGIC_BLOCK = registerBlock("magic_block", properties -> new MagicBlock(
+            properties.sound(SoundType.AMETHYST).strength(2f).requiresCorrectToolForDrops()
+    ));
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function)
     {

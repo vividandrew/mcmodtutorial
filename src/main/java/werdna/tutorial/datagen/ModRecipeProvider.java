@@ -77,6 +77,73 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .requires(ModBlocks.RAW_BISMUTH)
                         .unlockedBy(getHasName(ModBlocks.RAW_BISMUTH), has(ModBlocks.RAW_BISMUTH))
                         .save(output);
+
+
+                //Bismuth tool recipes
+                shaped(RecipeCategory.COMBAT, ModItems.BISMUTH_SWORD)
+                        .pattern("B")
+                        .pattern("B")
+                        .pattern("s")
+                        .define('B', ModItems.BISMUTH)
+                        .define('s', Items.STICK)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+
+                shaped(RecipeCategory.TOOLS, ModItems.BISMUTH_PICKAXE)
+                        .pattern("BBB")
+                        .pattern(" s ")
+                        .pattern(" s ")
+                        .define('B', ModItems.BISMUTH)
+                        .define('s', Items.STICK)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+
+                shaped(RecipeCategory.TOOLS, ModItems.BISMUTH_AXE)
+                        .pattern("BB")
+                        .pattern("Bs")
+                        .pattern(" s")
+                        .define('B', ModItems.BISMUTH)
+                        .define('s', Items.STICK)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+
+                shaped(RecipeCategory.TOOLS, ModItems.BISMUTH_HOE)
+                        .pattern("BB")
+                        .pattern(" s")
+                        .pattern(" s")
+                        .define('B', ModItems.BISMUTH)
+                        .define('s', Items.STICK)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+
+                shaped(RecipeCategory.TOOLS, ModItems.BISMUTH_SHOVEL)
+                        .pattern("B")
+                        .pattern("s")
+                        .pattern("s")
+                        .define('B', ModItems.BISMUTH)
+                        .define('s', Items.STICK)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+
+                shaped(RecipeCategory.TOOLS, ModItems.BISMUTH_PAXEL)
+                        .pattern("PAS")
+                        .define('P', ModItems.BISMUTH_PICKAXE)
+                        .define('A', ModItems.BISMUTH_AXE)
+                        .define('S', ModItems.BISMUTH_SHOVEL)
+                        .unlockedBy(getHasName(ModItems.BISMUTH_PICKAXE), has(ModItems.BISMUTH_PICKAXE))
+                        .unlockedBy(getHasName(ModItems.BISMUTH_AXE), has(ModItems.BISMUTH_AXE))
+                        .unlockedBy(getHasName(ModItems.BISMUTH_SHOVEL), has(ModItems.BISMUTH_SHOVEL))
+                        .save(output);
+
+                shaped(RecipeCategory.TOOLS, ModItems.BISMUTH_HAMMER)
+                        .pattern("BBB")
+                        .pattern("BsB")
+                        .pattern(" s ")
+                        .define('B', ModItems.BISMUTH)
+                        .define('s', Items.STICK)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+
             }
         };
     }

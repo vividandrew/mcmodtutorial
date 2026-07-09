@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import org.jspecify.annotations.Nullable;
@@ -25,5 +26,27 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
         tag(ModTags.Items.TRANSFORMABLE_ITEMS)
                 .add(ModItems.BISMUTH.builtInRegistryHolder().key())
                 .add(Items.GOLD_INGOT.builtInRegistryHolder().key());
+
+        tag(ItemTags.SWORDS)
+                .add(ModItems.BISMUTH_SWORD.builtInRegistryHolder().key());
+
+        tag(ItemTags.PICKAXES)
+                .add(ModItems.BISMUTH_PICKAXE.builtInRegistryHolder().key())
+                .add(ModItems.BISMUTH_PAXEL.builtInRegistryHolder().key())
+                .add(ModItems.BISMUTH_HAMMER.builtInRegistryHolder().key());
+
+        tag(ItemTags.AXES)
+                .add(ModItems.BISMUTH_AXE.builtInRegistryHolder().key())
+                .add(ModItems.BISMUTH_PAXEL.builtInRegistryHolder().key());
+
+        tag(ItemTags.HOES)
+                .add(ModItems.BISMUTH_HOE.builtInRegistryHolder().key());
+
+        tag(ItemTags.SHOVELS)
+                .add(ModItems.BISMUTH_SHOVEL.builtInRegistryHolder().key())
+                .add(ModItems.BISMUTH_PAXEL.builtInRegistryHolder().key());
+
+        tag(ModTags.Items.BISMUTH_TOOL_MATERIAL)
+                .add(ModItems.BISMUTH.builtInRegistryHolder().key());
     }
 }
