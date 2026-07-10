@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import werdna.tutorial.Tutorial;
+import werdna.tutorial.blocks.custom.BismuthLamp;
 import werdna.tutorial.blocks.custom.MagicBlock;
 
 import java.util.function.Function;
@@ -65,6 +66,9 @@ public class ModBlocks {
     public static Block MAGIC_BLOCK = registerBlock("magic_block", properties -> new MagicBlock(
             properties.sound(SoundType.AMETHYST).strength(2f).requiresCorrectToolForDrops()
     ));
+
+    public static Block BISMUTH_LAMP = registerBlock("bismuth_lamp", properties -> new BismuthLamp(
+            properties.lightLevel(blockState -> blockState.getValue(BismuthLamp.CLICKED) ? 15: 0)));
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function)
     {

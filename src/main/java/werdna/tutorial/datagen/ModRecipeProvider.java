@@ -144,6 +144,47 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
                         .save(output);
 
+                //Armour
+                shaped(RecipeCategory.COMBAT, ModItems.BISMUTH_HELMET)
+                        .pattern("BBB")
+                        .pattern("B B")
+                        .define('B', ModItems.BISMUTH)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+
+                shaped(RecipeCategory.COMBAT, ModItems.BISMUTH_CHEST)
+                        .pattern("B B")
+                        .pattern("BBB")
+                        .pattern("BBB")
+                        .define('B', ModItems.BISMUTH)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+
+                shaped(RecipeCategory.COMBAT, ModItems.BISMUTH_LEGS)
+                        .pattern("BBB")
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('B', ModItems.BISMUTH)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+
+                shaped(RecipeCategory.COMBAT, ModItems.BISMUTH_BOOTS)
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('B', ModItems.BISMUTH)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+
+                shaped(RecipeCategory.DECORATIONS, ModBlocks.BISMUTH_LAMP)
+                        .pattern("BBB")
+                        .pattern("glg")
+                        .pattern("BBB")
+                        .define('B', ModItems.BISMUTH)
+                        .define('g', Items.GLASS)
+                        .define('l', Items.GLOWSTONE_DUST)
+                        .unlockedBy(getHasName(Items.GLOWSTONE_DUST), has(Items.GLOWSTONE_DUST))
+                        .save(output);
+
             }
         };
     }

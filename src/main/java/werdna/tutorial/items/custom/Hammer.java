@@ -3,6 +3,8 @@ package werdna.tutorial.items.custom;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -21,6 +23,12 @@ public class Hammer extends Item {
     private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
     public Hammer(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    public void hurtEnemy(ItemStack itemStack, LivingEntity mob, LivingEntity attacker) {
+        mob.addEffect(new MobEffectInstance(MobEffects.GLOWING, 300), attacker);
+        super.hurtEnemy(itemStack, mob, attacker);
     }
 
     @Override

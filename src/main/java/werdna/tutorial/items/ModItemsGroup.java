@@ -42,6 +42,9 @@ public class ModItemsGroup {
                         output.accept(ModBlocks.BISMUTH_WALL);
                         output.accept(ModBlocks.BISMUTH_DOOR);
 
+                        //Decorative Blocks
+                        output.accept(ModBlocks.BISMUTH_LAMP);
+
                         //Tools
                         output.accept(ModItems.BISMUTH_SWORD);
                         output.accept(ModItems.BISMUTH_PICKAXE);
@@ -50,6 +53,12 @@ public class ModItemsGroup {
                         output.accept(ModItems.BISMUTH_HOE);
                         output.accept(ModItems.BISMUTH_PAXEL);
                         output.accept(ModItems.BISMUTH_HAMMER);
+
+                        //Armour
+                        output.accept(ModItems.BISMUTH_HELMET);
+                        output.accept(ModItems.BISMUTH_CHEST);
+                        output.accept(ModItems.BISMUTH_LEGS);
+                        output.accept(ModItems.BISMUTH_BOOTS);
 
                         //Custom items
                         output.accept(ModItems.CHISEL);

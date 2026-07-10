@@ -23,10 +23,12 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider registries) {
+
         tag(ModTags.Items.TRANSFORMABLE_ITEMS)
                 .add(ModItems.BISMUTH.builtInRegistryHolder().key())
                 .add(Items.GOLD_INGOT.builtInRegistryHolder().key());
 
+        //Tools
         tag(ItemTags.SWORDS)
                 .add(ModItems.BISMUTH_SWORD.builtInRegistryHolder().key());
 
@@ -48,5 +50,18 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
         tag(ModTags.Items.BISMUTH_TOOL_MATERIAL)
                 .add(ModItems.BISMUTH.builtInRegistryHolder().key());
+
+        //Armour
+        tag(ItemTags.HEAD_ARMOR)
+                .add(ModItems.BISMUTH_HELMET.builtInRegistryHolder().key());
+
+        tag(ItemTags.CHEST_ARMOR)
+                .add(ModItems.BISMUTH_CHEST.builtInRegistryHolder().key());
+
+        tag(ItemTags.LEG_ARMOR)
+                .add(ModItems.BISMUTH_LEGS.builtInRegistryHolder().key());
+
+        tag(ItemTags.FOOT_ARMOR)
+                .add(ModItems.BISMUTH_BOOTS.builtInRegistryHolder().key());
     }
 }

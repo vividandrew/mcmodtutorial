@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "tutorial:bismuth"
+  },
+  "pattern": [
+    "BBB",
+    "B B"
+  ],
+  "result": {
+    "id": "tutorial:bismuth_helmet"
+  }
+}

@@ -1,6 +1,10 @@
 // 26.2	-999999999-01-01T00:00:00	Tutorial/Tags for minecraft:item
 7096de936d61b0e18de044856a2b069ddfd8c99a data/minecraft/tags/item/axes.json
+182ed5ce8ae887fdc51cd1d12fc688fc0f10e35f data/minecraft/tags/item/chest_armor.json
+b7d8d637e81edc25d2976ebfd7cd6eae1d1f5b86 data/minecraft/tags/item/foot_armor.json
+c108d2d2ed447339dede01ae5d9419f156157d78 data/minecraft/tags/item/head_armor.json
 b3c456f22357afd4b8e9fc9a94d76a1bb27160ca data/minecraft/tags/item/hoes.json
+71824ca615a712a8e659c53ece30b51d70acda42 data/minecraft/tags/item/leg_armor.json
 9a29ca7fb28799a2125b5d4a0ce73cbe51b41eca data/minecraft/tags/item/pickaxes.json
 43d0a7818eeb45aed0d3976d6c24a4ba033f2471 data/minecraft/tags/item/shovels.json
 d44175919d13b84f91acf90af3af414741615467 data/minecraft/tags/item/swords.json

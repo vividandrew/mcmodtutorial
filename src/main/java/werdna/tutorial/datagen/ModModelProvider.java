@@ -4,11 +4,24 @@ import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.data.BlockFamily;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import werdna.tutorial.Tutorial;
 import werdna.tutorial.blocks.ModBlocks;
+import werdna.tutorial.blocks.custom.BismuthLamp;
 import werdna.tutorial.items.ModItems;
+import werdna.tutorial.material.ModArmourMaterial;
+
+import static net.minecraft.client.data.models.BlockModelGenerators.createBooleanModelDispatch;
+import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricPackOutput output) {
@@ -25,13 +38,19 @@ public class ModModelProvider extends FabricModelProvider {
         bismuth.button(ModBlocks.BISMUTH_BUTTON);
         bismuth.wall(ModBlocks.BISMUTH_WALL);
 
+        //Decorate blocks
         blockModelGenerators.createDoor(ModBlocks.BISMUTH_DOOR);
+        blockModelGenerators.createTrivialCube(ModBlocks.RAW_BISMUTH);
+        MultiVariant off = plainVariant(TexturedModel.CUBE.create(ModBlocks.BISMUTH_LAMP, blockModelGenerators.modelOutput));
+        MultiVariant on = plainVariant(blockModelGenerators.createSuffixedVariant(ModBlocks.BISMUTH_LAMP, "_on", ModelTemplates.CUBE_ALL, TextureMapping::cube));
+        blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.BISMUTH_LAMP)
+                .with(createBooleanModelDispatch(BismuthLamp.CLICKED, on, off)));
 
+        //World gen
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_DEEPSLATE_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_END_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_NETHER_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_ORE);
-        blockModelGenerators.createTrivialCube(ModBlocks.RAW_BISMUTH);
         blockModelGenerators.createTrivialCube(ModBlocks.MAGIC_BLOCK);
     }
 
@@ -56,5 +75,11 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_PAXEL, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_HAMMER, ModelTemplates.FLAT_HANDHELD_ITEM);
+
+        //Armour
+        itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_HELMET, ModArmourMaterial.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
+        itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_CHEST, ModArmourMaterial.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
+        itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_LEGS, ModArmourMaterial.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
+        itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_BOOTS, ModArmourMaterial.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
     }
 }

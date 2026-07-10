@@ -11,10 +11,12 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.TooltipDisplay;
+import net.minecraft.world.item.equipment.ArmorType;
 import werdna.tutorial.Tutorial;
 import werdna.tutorial.items.custom.Chisel;
 import werdna.tutorial.items.custom.Hammer;
 import werdna.tutorial.items.custom.Paxel;
+import werdna.tutorial.material.ModArmourMaterial;
 import werdna.tutorial.material.ModToolMaterial;
 
 import java.util.function.Consumer;
@@ -41,6 +43,20 @@ public class ModItems {
     ));
     public static final Item CHISEL = registerItem("chisel", properties -> new Chisel(
             properties.durability(32)
+    ));
+
+    //Armour
+    public static final Item BISMUTH_HELMET = registerItem("bismuth_helmet", properties -> new Item(
+            properties.humanoidArmor(ModArmourMaterial.Bismuth, ArmorType.HELMET)
+    ));
+    public static final Item BISMUTH_CHEST = registerItem("bismuth_chestplate", properties -> new Item(
+            properties.humanoidArmor(ModArmourMaterial.Bismuth, ArmorType.CHESTPLATE)
+    ));
+    public static final Item BISMUTH_LEGS = registerItem("bismuth_leggings", properties -> new Item(
+            properties.humanoidArmor(ModArmourMaterial.Bismuth, ArmorType.LEGGINGS)
+    ));
+    public static final Item BISMUTH_BOOTS = registerItem("bismuth_boots", properties -> new Item(
+            properties.humanoidArmor(ModArmourMaterial.Bismuth,ArmorType.BOOTS)
     ));
 
     //Food

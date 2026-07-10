@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "tutorial:bismuth",
+    "g": "minecraft:glass",
+    "l": "minecraft:glowstone_dust"
+  },
+  "pattern": [
+    "BBB",
+    "glg",
+    "BBB"
+  ],
+  "result": {
+    "id": "tutorial:bismuth_lamp"
+  }
+}

@@ -2,6 +2,7 @@
   "tutorial.creativemodetab.everything": "Andy's Mod",
   "item.tutorial.flourite": "Flourite",
   "item.tutorial.raw_flourite": "Raw Flourite",
+
   "item.tutorial.bismuth": "Bismuth",
   "item.tutorial.raw_bismuth": "Raw Bismuth",
   "item.tutorial.chisel": "Chisel",
@@ -13,10 +14,17 @@
   "item.tutorial.bismuth_shovel" : "Bismuth Shovel",
   "item.tutorial.bismuth_hoe" : "Bismuth Hoe",
   "item.tutorial.bismuth_paxel": "Bismuth Paxel",
+
+  "item.tutorial.bismuth_helmet": "Bismuth Helmet",
+  "item.tutorial.bismuth_chestplate": "Bismuth Chestplate",
+  "item.tutorial.bismuth_leggings": "Bismuth Leggings",
+  "item.tutorial.bismuth_boots": "Bismuth Boots",
+
   "item.tutorial.cauliflower": "Cauliflower",
   "tooltip.tutorial.cauliflower.shift.down": "A very healthy choice of food, may go well with other items?",
   "tooltip.tutorial.cauliflower.shift.up": "A healthy food option",
   "item.tutorial.starlight_ashes": "Starlight Ash",
+
   "block.tutorial.bismuth_block": "Bismuth Block",
   "block.tutorial.bismuth_stairs": "Bismuth Stairs",
   "block.tutorial.bismuth_slab": "Bismuth Slab",
@@ -29,5 +37,7 @@
   "block.tutorial.bismuth_nether_ore": "Bismuth Netherite Ore",
   "block.tutorial.bismuth_ore": "Bismuth Ore Block",
   "block.tutorial.raw_bismuth_block": "Raw Bismuth Block",
-  "block.tutorial.magic_block": "Magic block"
+  "block.tutorial.magic_block": "Magic block",
+
+  "block.tutorial.bismuth_lamp": "Bismuth Lamp"
 }
