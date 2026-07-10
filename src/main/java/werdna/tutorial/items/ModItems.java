@@ -44,6 +44,9 @@ public class ModItems {
     public static final Item CHISEL = registerItem("chisel", properties -> new Chisel(
             properties.durability(32)
     ));
+    public static final Item BISMUTH_BOW = registerItem("bismuth_bow", properties -> new BowItem(
+            properties.durability(500)
+    ));
 
     //Armour
     public static final Item BISMUTH_HELMET = registerItem("bismuth_helmet", properties -> new Item(

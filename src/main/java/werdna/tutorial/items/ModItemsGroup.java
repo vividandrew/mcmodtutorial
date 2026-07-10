@@ -53,6 +53,7 @@ public class ModItemsGroup {
                         output.accept(ModItems.BISMUTH_HOE);
                         output.accept(ModItems.BISMUTH_PAXEL);
                         output.accept(ModItems.BISMUTH_HAMMER);
+                        output.accept(ModItems.BISMUTH_BOW);
 
                         //Armour
                         output.accept(ModItems.BISMUTH_HELMET);

@@ -6,10 +6,11 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
-import net.minecraft.client.data.models.model.ModelTemplate;
-import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.renderer.item.ClientItem;
+import net.minecraft.client.renderer.item.ConditionalItemModel;
+import net.minecraft.client.renderer.item.ItemModel;
+import net.minecraft.client.renderer.item.properties.conditional.HasComponent;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Blocks;
@@ -17,8 +18,11 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import werdna.tutorial.Tutorial;
 import werdna.tutorial.blocks.ModBlocks;
 import werdna.tutorial.blocks.custom.BismuthLamp;
+import werdna.tutorial.data.ModDataComponent;
 import werdna.tutorial.items.ModItems;
 import werdna.tutorial.material.ModArmourMaterial;
+
+import java.util.Optional;
 
 import static net.minecraft.client.data.models.BlockModelGenerators.createBooleanModelDispatch;
 import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
@@ -27,7 +31,6 @@ public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricPackOutput output) {
         super(output);
     }
-
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
         var bismuth = blockModelGenerators.family(ModBlocks.BISMUTH);
@@ -67,7 +70,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ModItems.CAULIFLOWER, ModelTemplates.FLAT_ITEM);
 
         //tools
-        itemModelGenerators.generateFlatItem(ModItems.CHISEL, ModelTemplates.FLAT_ITEM);
+        ItemModel.Unbaked unbakedChisel = ItemModelUtils.plainModel(itemModelGenerators.createFlatItemModel(ModItems.CHISEL, ModelTemplates.FLAT_ITEM));
+        ItemModel.Unbaked unbakedUsedChisel = ItemModelUtils.plainModel(itemModelGenerators.createFlatItemModel(ModItems.CHISEL, "_used", ModelTemplates.FLAT_ITEM));
+        itemModelGenerators.itemModelOutput.accept(ModItems.CHISEL, new ClientItem(new ConditionalItemModel.Unbaked(Optional.empty(),
+                new HasComponent(ModDataComponent.COORDINATES, false),
+                unbakedUsedChisel, unbakedChisel), new ClientItem.Properties(false,false,1f)).model());
+
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
@@ -75,6 +83,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_PAXEL, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_HAMMER, ModelTemplates.FLAT_HANDHELD_ITEM);
+
+        itemModelGenerators.generateBow(ModItems.BISMUTH_BOW);
+        //itemModelGenerators.generateFlatItem(ModItems.BISMUTH_BOW, ModelTemplates.BOW);
 
         //Armour
         itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_HELMET, ModArmourMaterial.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, false);

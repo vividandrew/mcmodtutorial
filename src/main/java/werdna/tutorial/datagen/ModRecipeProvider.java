@@ -144,6 +144,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
                         .save(output);
 
+                shaped(RecipeCategory.COMBAT, ModItems.BISMUTH_BOW)
+                        .pattern("sB ")
+                        .pattern("s B")
+                        .pattern("sB ")
+                        .define('B', ModItems.BISMUTH)
+                        .define('s', Items.STRING)
+                        .unlockedBy(getHasName(ModItems.BISMUTH), has(ModItems.BISMUTH))
+                        .save(output);
+
                 //Armour
                 shaped(RecipeCategory.COMBAT, ModItems.BISMUTH_HELMET)
                         .pattern("BBB")

@@ -50,6 +50,8 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
         tag(ModTags.Items.BISMUTH_TOOL_MATERIAL)
                 .add(ModItems.BISMUTH.builtInRegistryHolder().key());
+        tag(ItemTags.BOW_ENCHANTABLE)
+                .add(ModItems.BISMUTH_BOW.builtInRegistryHolder().key());
 
         //Armour
         tag(ItemTags.HEAD_ARMOR)

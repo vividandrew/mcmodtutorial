@@ -7,6 +7,7 @@ import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import werdna.tutorial.blocks.ModBlocks;
+import werdna.tutorial.data.ModDataComponent;
 import werdna.tutorial.items.ModItems;
 import werdna.tutorial.items.ModItemsGroup;
 import werdna.tutorial.registries.ModFuel;
@@ -29,7 +30,9 @@ public class Tutorial implements ModInitializer {
 		ModItems.registerItems();
 		ModBlocks.registerBlocks();
 		ModItemsGroup.registerCreativeModeTab();
+
 		ModFuel.registerModFuels();
+		ModDataComponent.registerDataComponent();
 	}
 
 	public static Identifier id(String path) {

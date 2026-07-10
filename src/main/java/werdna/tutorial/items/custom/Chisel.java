@@ -14,7 +14,9 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import werdna.tutorial.blocks.ModBlocks;
+import werdna.tutorial.data.ModDataComponent;
 
 import java.util.Map;
 import java.util.function.Consumer;
@@ -27,6 +29,9 @@ public class Chisel extends Item {
                     Blocks.GOLD_BLOCK, ModBlocks.BISMUTH,
                     ModBlocks.BISMUTH, Blocks.GOLD_BLOCK
             );
+
+    private static final BooleanProperty HAS_COORDS = BooleanProperty.create("has_coords");
+
     public Chisel(Properties properties) {
         super(properties);
     }
@@ -39,6 +44,12 @@ public class Chisel extends Item {
         }else{
             builder.accept(Component.translatable("tooltip.tutorial.chisel.shift.up"));
         }
+
+        if(itemStack.get(ModDataComponent.COORDINATES) != null)
+        {
+            builder.accept(Component.literal("The last block changed at " + itemStack.get(ModDataComponent.COORDINATES)));
+        }
+
         super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
     }
 
@@ -55,6 +66,8 @@ public class Chisel extends Item {
 
                 context.getItemInHand().hurtAndBreak(1,((ServerLevel) lvl), ((ServerPlayer) context.getPlayer()),
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+
+                context.getItemInHand().set(ModDataComponent.COORDINATES, context.getClickedPos());
             }
         }
         return InteractionResult.SUCCESS;
