@@ -18,6 +18,9 @@
 		"main": [
 			"werdna.tutorial.Tutorial"
 		],
+		"client": [
+			"werdna.tutorial.TutorialClient"
+		],
 		"fabric-datagen": [
 			"werdna.tutorial.TutorialDataGenerator"
 		]

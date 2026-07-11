@@ -63,6 +63,9 @@ public class ModItems {
     ));
 
     //Food
+    public static final Item CAULIFLOWER = registerItem("cauliflower", properties -> new Item(properties.food(ModFoodProperties.CAULIFLOWER, ModFoodProperties.CAULIFLOWER_EFFECT)));
+
+    /* For smaller objects can also write them as such
     public static final Item CAULIFLOWER = registerItem("cauliflower", properties -> new Item(
             properties.food(new FoodProperties.Builder().nutrition(5).saturationModifier(.6f).build())
     ){
@@ -76,7 +79,7 @@ public class ModItems {
             }
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }
-    });
+    });*/
 
     public static Item registerItem(String name, Function<Item.Properties, Item> function )
     {
