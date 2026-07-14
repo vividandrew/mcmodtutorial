@@ -15,6 +15,7 @@ import net.minecraft.world.item.equipment.ArmorType;
 import werdna.tutorial.Tutorial;
 import werdna.tutorial.blocks.ModBlocks;
 import werdna.tutorial.blocks.custom.RiceCropBlock;
+import werdna.tutorial.datagen.ModJukeboxSongs;
 import werdna.tutorial.items.custom.Chisel;
 import werdna.tutorial.items.custom.Hammer;
 import werdna.tutorial.items.custom.Paxel;
@@ -73,6 +74,9 @@ public class ModItems {
     public static final Item RICE_SHOOTS = registerItem("rice_shoot", properties -> new RiceCropSeed(
             ModBlocks.RICE_SHOOT_BLOCK, properties.useItemDescriptionPrefix()
     ));
+
+    //Sounds
+    public static final Item BAR_BRAWL_DISC = registerItem("bar_brawl_music_disc", properties -> new Item(properties.jukeboxPlayable(ModJukeboxSongs.BAR_BRAWL_KEY).stacksTo(1).rarity(Rarity.COMMON)));
 
     /* For smaller objects can also write them as such
     public static final Item CAULIFLOWER = registerItem("cauliflower", properties -> new Item(

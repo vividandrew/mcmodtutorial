@@ -19,6 +19,7 @@ import werdna.tutorial.blocks.custom.BismuthLamp;
 import werdna.tutorial.blocks.custom.CauliflowerCropBlock;
 import werdna.tutorial.blocks.custom.MagicBlock;
 import werdna.tutorial.blocks.custom.RiceCropBlock;
+import werdna.tutorial.sounds.ModSounds;
 
 import java.util.function.Function;
 
@@ -73,7 +74,7 @@ public class ModBlocks {
             properties.strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)
     ));
     public static Block MAGIC_BLOCK = registerBlock("magic_block", properties -> new MagicBlock(
-            properties.sound(SoundType.AMETHYST).strength(2f).requiresCorrectToolForDrops()
+            properties.sound(ModSounds.MAGIC_BLOCK_SOUNDS).strength(2f).requiresCorrectToolForDrops()
     ));
 
     //crops

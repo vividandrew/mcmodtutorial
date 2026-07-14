@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "juke_song.tutorial.bar_brawl"
+  },
+  "length_in_seconds": 162.0,
+  "sound_event": "tutorial:bar_brawl"
+}

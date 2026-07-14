@@ -105,5 +105,8 @@ public class ModModelProvider extends FabricModelProvider {
 
         //food
         //itemModelGenerators.generateFlatItem(ModItems.CAULIFLOWER_SEEDS, ModelTemplates.FLAT_ITEM);
+
+        //sounds
+        itemModelGenerators.generateFlatItem(ModItems.BAR_BRAWL_DISC,ModelTemplates.FLAT_ITEM);
     }
 }

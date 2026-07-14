@@ -71,6 +71,8 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
         tag(ItemTags.VILLAGER_PLANTABLE_SEEDS)
                 .add(ModItems.CAULIFLOWER_SEEDS.builtInRegistryHolder().key());
 
-        
+        //Sounds
+        tag(ItemTags.CREEPER_DROP_MUSIC_DISCS)
+                .add(ModItems.BAR_BRAWL_DISC.builtInRegistryHolder().key());
     }
 }

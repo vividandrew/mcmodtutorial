@@ -1,0 +1,47 @@
+{
+  "bar_brawl": {
+    "sounds": [
+      {
+        "name": "tutorial:bar_brawl",
+        "stream": true
+      }
+    ],
+    "subtitle": "subtitles.tutorial.bar_brawl"
+  },
+  "chisel_use": {
+    "sounds": [
+      "tutorial:chisel_use"
+    ],
+    "subtitle": "subtitles.tutorial.chisel_use"
+  },
+  "magic_block_break": {
+    "sounds": [
+      "tutorial:magic_block_break"
+    ],
+    "subtitle": "subtitles.tutorial.magic_block_break"
+  },
+  "magic_block_fall": {
+    "sounds": [
+      "tutorial:magic_block_fall"
+    ],
+    "subtitle": "subtitles.tutorial.magic_block_fall"
+  },
+  "magic_block_hit": {
+    "sounds": [
+      "tutorial:magic_block_hit"
+    ],
+    "subtitle": "subtitles.tutorial.magic_block_hit"
+  },
+  "magic_block_place": {
+    "sounds": [
+      "tutorial:magic_block_place"
+    ],
+    "subtitle": "subtitles.tutorial.magic_block_place"
+  },
+  "magic_block_step": {
+    "sounds": [
+      "tutorial:magic_block_step"
+    ],
+    "subtitle": "subtitles.tutorial.magic_block_step"
+  }
+}

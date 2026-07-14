@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
@@ -17,6 +18,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import werdna.tutorial.blocks.ModBlocks;
 import werdna.tutorial.data.ModDataComponent;
+import werdna.tutorial.items.ModItems;
+import werdna.tutorial.sounds.ModSounds;
 
 import java.util.Map;
 import java.util.function.Consumer;
@@ -68,6 +71,7 @@ public class Chisel extends Item {
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 context.getItemInHand().set(ModDataComponent.COORDINATES, context.getClickedPos());
+                lvl.playSound(null, context.getClickedPos(),ModSounds.CHISEL_USE, SoundSource.BLOCKS, 10f,1f);
             }
         }
         return InteractionResult.SUCCESS;

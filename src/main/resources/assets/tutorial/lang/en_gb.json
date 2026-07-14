@@ -48,5 +48,8 @@
   "block.tutorial.raw_bismuth_block": "Raw Bismuth Block",
   "block.tutorial.magic_block": "Magic block",
 
-  "block.tutorial.bismuth_lamp": "Bismuth Lamp"
+  "block.tutorial.bismuth_lamp": "Bismuth Lamp",
+
+  "item.tutorial.bar_brawl_music_disc" : "Bryan Tech CC0",
+  "jukebox_song.tutorial.bar_brawl": "Bryan Tech - Bar Brawl (CC0)"
 }

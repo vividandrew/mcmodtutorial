@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import werdna.tutorial.items.ModItems;
+import werdna.tutorial.sounds.ModSounds;
 import werdna.tutorial.tag.ModTags;
 
 public class MagicBlock extends Block {

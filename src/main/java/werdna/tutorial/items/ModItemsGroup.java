@@ -70,6 +70,9 @@ public class ModItemsGroup {
                         //Custom items
                         output.accept(ModItems.CHISEL);
                         output.accept(ModBlocks.MAGIC_BLOCK);
+
+                        //Sound items
+                        output.accept(ModItems.BAR_BRAWL_DISC);
                     }))
             .build());
 

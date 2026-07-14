@@ -1,6 +1,7 @@
 // 26.2	-999999999-01-01T00:00:00	Tutorial/Tags for minecraft:item
 7096de936d61b0e18de044856a2b069ddfd8c99a data/minecraft/tags/item/axes.json
 182ed5ce8ae887fdc51cd1d12fc688fc0f10e35f data/minecraft/tags/item/chest_armor.json
+4c4a3f005c43ba2fd790ff2bb5f893a3a278f4fd data/minecraft/tags/item/creeper_drop_music_discs.json
 045f76c97c15deabe41f631117741c6bf35310e9 data/minecraft/tags/item/enchantable/bow.json
 b7d8d637e81edc25d2976ebfd7cd6eae1d1f5b86 data/minecraft/tags/item/foot_armor.json
 c108d2d2ed447339dede01ae5d9419f156157d78 data/minecraft/tags/item/head_armor.json

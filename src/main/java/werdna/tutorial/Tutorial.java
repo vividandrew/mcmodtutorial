@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.resources.Identifier;
 
-import net.minecraft.server.level.ServerPlayer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import werdna.tutorial.attachments.ModAttachmentTypes;
@@ -18,8 +17,10 @@ import werdna.tutorial.items.ModItems;
 import werdna.tutorial.items.ModItemsGroup;
 import werdna.tutorial.loot.ModLootTableModifiers;
 import werdna.tutorial.networking.ModPackets;
+import werdna.tutorial.registries.ModCommands;
 import werdna.tutorial.registries.ModCompostables;
 import werdna.tutorial.registries.ModFuel;
+import werdna.tutorial.sounds.ModSounds;
 
 public class Tutorial implements ModInitializer {
 	public static final String MOD_ID = "tutorial";
@@ -45,9 +46,12 @@ public class Tutorial implements ModInitializer {
 
 		ModFuel.registerModFuels();
 		ModCompostables.registerModCompostables();
+		ModCommands.register();
+		ModCommands.registerCommands();
 
 		ModDataComponent.registerDataComponent();
 		ModConsumeEffects.registerModConsumeEffects();
+		ModSounds.registerSounds();
 
 		//networking
 		ModPackets.registerPackets();

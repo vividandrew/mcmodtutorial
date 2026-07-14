@@ -1,12 +1,19 @@
 package werdna.tutorial.events;
 
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.block.Blocks;
+import werdna.tutorial.Tutorial;
 import werdna.tutorial.attachments.ModAttachmentTypes;
 import werdna.tutorial.attachments.custom.ManaHandler;
+import werdna.tutorial.commands.ReturnHomeCommand;
 import werdna.tutorial.networking.packet.ModManaPayloadS2C;
 
 public class ModServerEvents {
+
     public static void onPlayerJoin(ServerPlayer player)
     {
         if(player.hasAttached(ModAttachmentTypes.MANA))
