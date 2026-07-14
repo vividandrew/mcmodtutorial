@@ -18,6 +18,7 @@ import werdna.tutorial.items.ModItems;
 import werdna.tutorial.items.ModItemsGroup;
 import werdna.tutorial.loot.ModLootTableModifiers;
 import werdna.tutorial.networking.ModPackets;
+import werdna.tutorial.registries.ModCompostables;
 import werdna.tutorial.registries.ModFuel;
 
 public class Tutorial implements ModInitializer {
@@ -43,6 +44,8 @@ public class Tutorial implements ModInitializer {
 		ModItemsGroup.registerCreativeModeTab();
 
 		ModFuel.registerModFuels();
+		ModCompostables.registerModCompostables();
+
 		ModDataComponent.registerDataComponent();
 		ModConsumeEffects.registerModConsumeEffects();
 

@@ -1,5 +1,8 @@
 {
   "tutorial.creativemodetab.everything": "Andy's Mod",
+
+  "key.tutorial.k": "Spawn Chicken Joe Button",
+
   "item.tutorial.flourite": "Flourite",
   "item.tutorial.raw_flourite": "Raw Flourite",
 
@@ -24,6 +27,11 @@
   "item.tutorial.cauliflower": "Cauliflower",
   "tooltip.tutorial.cauliflower.shift.down": "A very healthy choice of food, may go well with other items?",
   "tooltip.tutorial.cauliflower.shift.up": "A healthy food option",
+  "item.tutorial.cauliflower_seeds": "CauliflowerSeeds",
+  "block.tutorial.petunia": "Petunia Flower",
+  "item.tutorial.rice_shoot": "Rice Shoots",
+  "block.tutorial.coloured_leaves": "Coloured leaves",
+
   "item.tutorial.starlight_ashes": "Starlight Ash",
 
   "block.tutorial.bismuth_block": "Bismuth Block",

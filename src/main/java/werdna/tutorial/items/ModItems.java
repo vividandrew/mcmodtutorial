@@ -13,9 +13,12 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.equipment.ArmorType;
 import werdna.tutorial.Tutorial;
+import werdna.tutorial.blocks.ModBlocks;
+import werdna.tutorial.blocks.custom.RiceCropBlock;
 import werdna.tutorial.items.custom.Chisel;
 import werdna.tutorial.items.custom.Hammer;
 import werdna.tutorial.items.custom.Paxel;
+import werdna.tutorial.items.custom.RiceCropSeed;
 import werdna.tutorial.material.ModArmourMaterial;
 import werdna.tutorial.material.ModToolMaterial;
 
@@ -64,6 +67,12 @@ public class ModItems {
 
     //Food
     public static final Item CAULIFLOWER = registerItem("cauliflower", properties -> new Item(properties.food(ModFoodProperties.CAULIFLOWER, ModFoodProperties.CAULIFLOWER_EFFECT)));
+    public static final Item CAULIFLOWER_SEEDS = registerItem("cauliflower_seeds", properties -> new BlockItem(
+            ModBlocks.CAULIFLOWER_BLOCK,properties.useItemDescriptionPrefix()
+    ));
+    public static final Item RICE_SHOOTS = registerItem("rice_shoot", properties -> new RiceCropSeed(
+            ModBlocks.RICE_SHOOT_BLOCK, properties.useItemDescriptionPrefix()
+    ));
 
     /* For smaller objects can also write them as such
     public static final Item CAULIFLOWER = registerItem("cauliflower", properties -> new Item(

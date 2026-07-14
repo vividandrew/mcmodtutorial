@@ -24,7 +24,7 @@ public class ModLootTableModifiers {
             LootPool.Builder poolBuilder = LootPool.lootPool()
                     .setRolls(ConstantValue.exactly(1))
                     .when(LootItemRandomChanceCondition.randomChance(0.25f))
-                    .add(LootItem.lootTableItem(ModItems.CAULIFLOWER))
+                    .add(LootItem.lootTableItem(ModItems.CAULIFLOWER_SEEDS))
                     .apply(SetItemCountFunction.setCount(UniformGenerator.between(1,2)).build());
 
             builder.pool(poolBuilder.build());
@@ -34,7 +34,7 @@ public class ModLootTableModifiers {
             LootPool.Builder poolBuilder = LootPool.lootPool()
                     .setRolls(ConstantValue.exactly(1))
                     .when(LootItemRandomChanceCondition.randomChance(0.25f))
-                    .add(LootItem.lootTableItem(ModItems.CAULIFLOWER))
+                    .add(LootItem.lootTableItem(ModItems.CAULIFLOWER_SEEDS))
                     .apply(SetItemCountFunction.setCount(UniformGenerator.between(1,2)).build());
 
             builder.pool(poolBuilder.build());
@@ -44,7 +44,7 @@ public class ModLootTableModifiers {
             LootPool.Builder poolBuilder = LootPool.lootPool()
                     .setRolls(ConstantValue.exactly(1))
                     .when(LootItemRandomChanceCondition.randomChance(0.25f))
-                    .add(LootItem.lootTableItem(ModItems.CAULIFLOWER))
+                    .add(LootItem.lootTableItem(ModItems.CAULIFLOWER_SEEDS))
                     .apply(SetItemCountFunction.setCount(UniformGenerator.between(1,2)).build());
 
             builder.pool(poolBuilder.build());

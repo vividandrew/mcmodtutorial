@@ -18,6 +18,8 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import werdna.tutorial.Tutorial;
 import werdna.tutorial.blocks.ModBlocks;
 import werdna.tutorial.blocks.custom.BismuthLamp;
+import werdna.tutorial.blocks.custom.CauliflowerCropBlock;
+import werdna.tutorial.blocks.custom.RiceCropBlock;
 import werdna.tutorial.data.ModDataComponent;
 import werdna.tutorial.items.ModItems;
 import werdna.tutorial.material.ModArmourMaterial;
@@ -55,6 +57,14 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_NETHER_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_ORE);
         blockModelGenerators.createTrivialCube(ModBlocks.MAGIC_BLOCK);
+
+        //food
+        blockModelGenerators.createCropBlock(ModBlocks.CAULIFLOWER_BLOCK, CauliflowerCropBlock.AGE, 0,1,2,3,4,5,6);
+        blockModelGenerators.createCropBlock(ModBlocks.RICE_SHOOT_BLOCK, RiceCropBlock.AGE, 0,1,2,3,4,5,6,7);
+
+        //Flowers
+        blockModelGenerators.createPlantWithDefaultItem(ModBlocks.PETUNIA_FLOWER, ModBlocks.POTTED_PETUNIA, BlockModelGenerators.PlantType.TINTED);
+        blockModelGenerators.createTintedLeaves(ModBlocks.COLOURED_LEAVES,TexturedModel.LEAVES, -12466612);
     }
 
     @Override
@@ -84,13 +94,16 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_PAXEL, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.BISMUTH_HAMMER, ModelTemplates.FLAT_HANDHELD_ITEM);
 
+        itemModelGenerators.createFlatItemModel(ModItems.BISMUTH_BOW, ModelTemplates.BOW);
         itemModelGenerators.generateBow(ModItems.BISMUTH_BOW);
-        //itemModelGenerators.generateFlatItem(ModItems.BISMUTH_BOW, ModelTemplates.BOW);
 
         //Armour
         itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_HELMET, ModArmourMaterial.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
         itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_CHEST, ModArmourMaterial.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
         itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_LEGS, ModArmourMaterial.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
         itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_BOOTS, ModArmourMaterial.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
+
+        //food
+        //itemModelGenerators.generateFlatItem(ModItems.CAULIFLOWER_SEEDS, ModelTemplates.FLAT_ITEM);
     }
 }

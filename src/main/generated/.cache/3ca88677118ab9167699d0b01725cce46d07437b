@@ -9,5 +9,6 @@ b3c456f22357afd4b8e9fc9a94d76a1bb27160ca data/minecraft/tags/item/hoes.json
 9a29ca7fb28799a2125b5d4a0ce73cbe51b41eca data/minecraft/tags/item/pickaxes.json
 43d0a7818eeb45aed0d3976d6c24a4ba033f2471 data/minecraft/tags/item/shovels.json
 d44175919d13b84f91acf90af3af414741615467 data/minecraft/tags/item/swords.json
+2ded96b84891232e211e22bc907b4f586340b1e6 data/minecraft/tags/item/villager_plantable_seeds.json
 52650905b52bf5433677dae1661e98c501ac997c data/tutorial/tags/item/bismuth_tool_material.json
 f725f3076e8aa0471c34dc91aab9c096bf7215db data/tutorial/tags/item/transformable_items.json

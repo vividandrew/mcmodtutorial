@@ -1,4 +1,7 @@
 // 26.2	-999999999-01-01T00:00:00	Tutorial/Tags for minecraft:block
+e19b233472f076e796adfc1626a40335cba44b95 data/minecraft/tags/block/crops.json
+897af46fd78b723bba8e62288efcf92c2d4f85c9 data/minecraft/tags/block/flower_pots.json
+3b49f809ba86c31a8100fae4db51f1d9f6c4a4b7 data/minecraft/tags/block/flowers.json
 cfde3185dfa6e6a0e09ea3be0b7dacfcb2b9724c data/minecraft/tags/block/incorrect_for_bismuth_tool.json
 e186768fca3ce16ac17dc246d29631220dec199a data/minecraft/tags/block/mineable/pickaxe.json
 edd509bc569a71e45b91935d0e20f5c1ce585390 data/minecraft/tags/block/needs_iron_tool.json

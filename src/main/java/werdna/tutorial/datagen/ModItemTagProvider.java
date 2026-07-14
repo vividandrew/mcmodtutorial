@@ -4,11 +4,13 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import org.jspecify.annotations.Nullable;
 import werdna.tutorial.Tutorial;
+import werdna.tutorial.blocks.ModBlocks;
 import werdna.tutorial.items.ModItems;
 import werdna.tutorial.tag.ModTags;
 
@@ -65,5 +67,10 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
         tag(ItemTags.FOOT_ARMOR)
                 .add(ModItems.BISMUTH_BOOTS.builtInRegistryHolder().key());
+
+        tag(ItemTags.VILLAGER_PLANTABLE_SEEDS)
+                .add(ModItems.CAULIFLOWER_SEEDS.builtInRegistryHolder().key());
+
+        
     }
 }

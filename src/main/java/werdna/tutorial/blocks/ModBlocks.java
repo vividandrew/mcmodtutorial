@@ -7,14 +7,18 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.material.PushReaction;
 import werdna.tutorial.Tutorial;
 import werdna.tutorial.blocks.custom.BismuthLamp;
+import werdna.tutorial.blocks.custom.CauliflowerCropBlock;
 import werdna.tutorial.blocks.custom.MagicBlock;
+import werdna.tutorial.blocks.custom.RiceCropBlock;
 
 import java.util.function.Function;
 
@@ -22,6 +26,11 @@ public class ModBlocks {
 
     public static Block BISMUTH = registerBlock("bismuth_block", properties -> new Block(properties.strength(4f)
             .requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+
+    // Decorative
+    public static Block RAW_BISMUTH = registerBlock("raw_bismuth_block", properties -> new Block(
+            properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)
+    ));
 
     public static Block BISMUTH_STAIRS = registerBlock("bismuth_stairs", properties -> new StairBlock(
             ModBlocks.BISMUTH.defaultBlockState(),
@@ -46,7 +55,11 @@ public class ModBlocks {
     public static Block BISMUTH_DOOR = registerBlock("bismuth_door", properties -> new DoorBlock(BlockSetType.ACACIA,
             properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)
     ));
+    public static Block BISMUTH_LAMP = registerBlock("bismuth_lamp", properties -> new BismuthLamp(
+            properties.lightLevel(blockState -> blockState.getValue(BismuthLamp.CLICKED) ? 15: 0)));
 
+
+    //World generation
     public static Block BISMUTH_DEEPSLATE_ORE = registerBlock("bismuth_deepslate_ore", properties -> new DropExperienceBlock(UniformInt.of(3,5),
             properties.strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)
     ));
@@ -59,16 +72,37 @@ public class ModBlocks {
     public static Block BISMUTH_ORE = registerBlock("bismuth_ore", properties -> new DropExperienceBlock(UniformInt.of(0,4),
             properties.strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)
     ));
-    public static Block RAW_BISMUTH = registerBlock("raw_bismuth_block", properties -> new Block(
-            properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)
-    ));
-
     public static Block MAGIC_BLOCK = registerBlock("magic_block", properties -> new MagicBlock(
             properties.sound(SoundType.AMETHYST).strength(2f).requiresCorrectToolForDrops()
     ));
 
-    public static Block BISMUTH_LAMP = registerBlock("bismuth_lamp", properties -> new BismuthLamp(
-            properties.lightLevel(blockState -> blockState.getValue(BismuthLamp.CLICKED) ? 15: 0)));
+    //crops
+    public static Block CAULIFLOWER_BLOCK = registerBlockWithoutItem("cauliflower_crop", properties -> new CauliflowerCropBlock(
+            properties.randomTicks().instabreak().sound(SoundType.CROP).noCollision().pushReaction(PushReaction.DESTROY)
+    ));
+
+    public static Block RICE_SHOOT_BLOCK = registerBlockWithoutItem("rice_crop", properties -> new RiceCropBlock(
+            properties.randomTicks().instabreak().sound(SoundType.GRASS).noCollision().pushReaction(PushReaction.DESTROY)
+    ));
+
+    public static Block PETUNIA_FLOWER = registerBlock("petunia", properties -> new FlowerBlock(
+            MobEffects.BLINDNESS, 12,properties.offsetType(BlockBehaviour.OffsetType.XZ).instabreak().sound(SoundType.GRASS)
+            .pushReaction(PushReaction.DESTROY).dynamicShape().noCollision()
+    ));
+    public static Block POTTED_PETUNIA = registerBlock("potted_petunia", properties -> new FlowerPotBlock(PETUNIA_FLOWER,
+            properties.instabreak().noCollision().pushReaction(PushReaction.DESTROY)
+    ));
+
+    public static Block COLOURED_LEAVES = registerBlock("coloured_leaves", properties -> new TintedParticleLeavesBlock(.1f,
+            properties.strength(.2f).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(Blocks::ocelotOrParrot)
+                    .isSuffocating(Blocks::never).isViewBlocking(Blocks::never).ignitedByLava().pushReaction(PushReaction.DESTROY)
+                    .isRedstoneConductor(Blocks::never)));
+
+    private static Block registerBlockWithoutItem(String name, Function<BlockBehaviour.Properties, Block> function)
+    {
+        return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(Tutorial.MOD_ID, name), function.apply(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK,Identifier.fromNamespaceAndPath(Tutorial.MOD_ID, name)))));
+    }
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function)
     {

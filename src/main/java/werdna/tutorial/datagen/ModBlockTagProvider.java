@@ -63,5 +63,16 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .forceAddTag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .forceAddTag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .forceAddTag(BlockTags.MINEABLE_WITH_AXE);
+
+
+        //food
+        tag(BlockTags.CROPS)
+                .add(ModBlocks.CAULIFLOWER_BLOCK.properties().blockIdOrThrow())
+                .add(ModBlocks.RICE_SHOOT_BLOCK.properties().blockIdOrThrow());
+
+        tag(BlockTags.FLOWERS)
+                .add(ModBlocks.PETUNIA_FLOWER.properties().blockIdOrThrow());
+        tag(BlockTags.FLOWER_POTS)
+                .add(ModBlocks.POTTED_PETUNIA.properties().blockIdOrThrow());
     }
 }

@@ -27,6 +27,12 @@ public class ModItemsGroup {
 
                         //food items
                         output.accept(ModItems.CAULIFLOWER);
+                        output.accept(ModItems.CAULIFLOWER_SEEDS);
+                        output.accept(ModItems.RICE_SHOOTS);
+
+                        //Decorative items
+                        output.accept(ModBlocks.PETUNIA_FLOWER);
+                        output.accept(ModBlocks.COLOURED_LEAVES);
 
                         //blocks
                         output.accept(ModBlocks.BISMUTH);
