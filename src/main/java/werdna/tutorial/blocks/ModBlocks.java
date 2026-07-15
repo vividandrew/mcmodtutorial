@@ -13,12 +13,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import werdna.tutorial.Tutorial;
-import werdna.tutorial.blocks.custom.BismuthLamp;
-import werdna.tutorial.blocks.custom.CauliflowerCropBlock;
-import werdna.tutorial.blocks.custom.MagicBlock;
-import werdna.tutorial.blocks.custom.RiceCropBlock;
+import werdna.tutorial.blocks.custom.*;
 import werdna.tutorial.sounds.ModSounds;
 
 import java.util.function.Function;
@@ -58,7 +56,10 @@ public class ModBlocks {
     ));
     public static Block BISMUTH_LAMP = registerBlock("bismuth_lamp", properties -> new BismuthLamp(
             properties.lightLevel(blockState -> blockState.getValue(BismuthLamp.CLICKED) ? 15: 0)));
+    public static Block CUSTOM_CHAIR = registerBlock("chair", properties -> new Chair(
+            properties.sound(SoundType.WOOD).mapColor(MapColor.WOOD).pushReaction(PushReaction.DESTROY).strength(1.24f)
 
+    ));
 
     //World generation
     public static Block BISMUTH_DEEPSLATE_ORE = registerBlock("bismuth_deepslate_ore", properties -> new DropExperienceBlock(UniformInt.of(3,5),

@@ -60,6 +60,7 @@ public class ModItemsGroup {
                         output.accept(ModItems.BISMUTH_PAXEL);
                         output.accept(ModItems.BISMUTH_HAMMER);
                         output.accept(ModItems.BISMUTH_BOW);
+                        output.accept(ModItems.SPECTRE_STAFF);
 
                         //Armour
                         output.accept(ModItems.BISMUTH_HELMET);
@@ -70,6 +71,7 @@ public class ModItemsGroup {
                         //Custom items
                         output.accept(ModItems.CHISEL);
                         output.accept(ModBlocks.MAGIC_BLOCK);
+                        output.accept(ModBlocks.CUSTOM_CHAIR);
 
                         //Sound items
                         output.accept(ModItems.BAR_BRAWL_DISC);

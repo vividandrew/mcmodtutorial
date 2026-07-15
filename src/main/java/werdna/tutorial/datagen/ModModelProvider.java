@@ -6,11 +6,14 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.renderer.block.dispatch.VariantMutator;
 import net.minecraft.client.renderer.item.ClientItem;
 import net.minecraft.client.renderer.item.ConditionalItemModel;
 import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.client.renderer.item.properties.conditional.HasComponent;
+import net.minecraft.core.Direction;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Blocks;
@@ -26,13 +29,21 @@ import werdna.tutorial.material.ModArmourMaterial;
 
 import java.util.Optional;
 
-import static net.minecraft.client.data.models.BlockModelGenerators.createBooleanModelDispatch;
-import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
+import static net.minecraft.client.data.models.BlockModelGenerators.*;
+import static net.minecraft.client.data.models.BlockModelGenerators.NOP;
+import static net.minecraft.client.data.models.BlockModelGenerators.Y_ROT_180;
+import static net.minecraft.client.data.models.BlockModelGenerators.Y_ROT_270;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricPackOutput output) {
         super(output);
     }
+    //Pulled from BlockModelGenerators.java for directional blocks
+    private static final PropertyDispatch<VariantMutator> ROTATION_HORIZONTAL_FACING = PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING)
+            .select(Direction.EAST, Y_ROT_90)
+            .select(Direction.SOUTH, Y_ROT_180)
+            .select(Direction.WEST, Y_ROT_270)
+            .select(Direction.NORTH, NOP);
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
         var bismuth = blockModelGenerators.family(ModBlocks.BISMUTH);
@@ -50,6 +61,13 @@ public class ModModelProvider extends FabricModelProvider {
         MultiVariant on = plainVariant(blockModelGenerators.createSuffixedVariant(ModBlocks.BISMUTH_LAMP, "_on", ModelTemplates.CUBE_ALL, TextureMapping::cube));
         blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.BISMUTH_LAMP)
                 .with(createBooleanModelDispatch(BismuthLamp.CLICKED, on, off)));
+        //Custom Models
+        blockModelGenerators.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(
+                ModBlocks.CUSTOM_CHAIR, BlockModelGenerators.plainVariant(Identifier.fromNamespaceAndPath(
+                        Tutorial.MOD_ID, "block/chair"
+                ))
+        ).with(ROTATION_HORIZONTAL_FACING));
+
 
         //World gen
         blockModelGenerators.createTrivialCube(ModBlocks.BISMUTH_DEEPSLATE_ORE);
@@ -96,6 +114,8 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerators.createFlatItemModel(ModItems.BISMUTH_BOW, ModelTemplates.BOW);
         itemModelGenerators.generateBow(ModItems.BISMUTH_BOW);
+
+        itemModelGenerators.declareCustomModelItem(ModItems.SPECTRE_STAFF);
 
         //Armour
         itemModelGenerators.generateTrimmableItem(ModItems.BISMUTH_HELMET, ModArmourMaterial.BISMUTH_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, false);

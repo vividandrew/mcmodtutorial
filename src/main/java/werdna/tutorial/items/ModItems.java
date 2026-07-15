@@ -51,6 +51,9 @@ public class ModItems {
     public static final Item BISMUTH_BOW = registerItem("bismuth_bow", properties -> new BowItem(
             properties.durability(500)
     ));
+    public static final Item SPECTRE_STAFF = registerItem("spectre_staff", properties -> new Item(
+            properties.stacksTo(1).rarity(Rarity.COMMON)
+    ));
 
     //Armour
     public static final Item BISMUTH_HELMET = registerItem("bismuth_helmet", properties -> new Item(
